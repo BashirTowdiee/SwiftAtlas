@@ -1,5 +1,5 @@
 import Foundation
 
 enum SampleThemeState {
-    static let option: ThemeOption = .dark
+  static let option: ThemeOption = .dark
 }

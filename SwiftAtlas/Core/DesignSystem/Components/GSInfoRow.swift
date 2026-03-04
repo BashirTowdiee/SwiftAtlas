@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct GSInfoRow: View {
-    let title: String
-    let value: String
+  let title: String
+  let value: String
 
-    var body: some View {
-        HStack {
-            Text(LocalizedStringKey(title))
-                .foregroundStyle(.secondary)
-            Spacer()
-            Text(value)
-                .font(GSTypography.section)
-        }
+  var body: some View {
+    HStack {
+      Text(LocalizedStringKey(title))
+        .foregroundStyle(.secondary)
+      Spacer()
+      Text(value)
+        .font(GSTypography.section)
     }
+  }
 }
