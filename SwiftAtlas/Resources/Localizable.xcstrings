@@ -1,0 +1,129 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "• %@" : {
+
+    },
+    "• Prefer protocols or composition for extension points." : {
+
+    },
+    "• Use `class` members only when overriding is intentional; otherwise prefer `static`." : {
+
+    },
+    "• Use `required init` when subclasses must preserve initialization contracts." : {
+
+    },
+    "Access Control" : {
+
+    },
+    "Alerts are for short, blocking decisions." : {
+
+    },
+    "All tracks" : {
+
+    },
+    "Buttons" : {
+
+    },
+    "Cancellation" : {
+
+    },
+    "Choose a presentation explanation" : {
+
+    },
+    "Components" : {
+
+    },
+    "Concurrency" : {
+
+    },
+    "Diagnostics are loading." : {
+
+    },
+    "Display" : {
+
+    },
+    "Document the choice in code" : {
+
+    },
+    "Enter a demo token" : {
+
+    },
+    "Every tab demonstrates a different layer of a serious SwiftUI app: app shell, design system, data flow, caching, memory ownership, and concurrency." : {
+
+    },
+    "Filters" : {
+
+    },
+    "Full-screen cover" : {
+
+    },
+    "Guidance" : {
+
+    },
+    "Inheritance" : {
+
+    },
+    "Keep the flow lightweight" : {
+
+    },
+    "Labs" : {
+
+    },
+    "Learn Swift by reading code that treats architecture as part of the lesson." : {
+
+    },
+    "Lesson Detail" : {
+
+    },
+    "Lessons" : {
+
+    },
+    "Modals" : {
+
+    },
+    "No lessons match the current search and filter state." : {
+
+    },
+    "OK" : {
+
+    },
+    "Ownership" : {
+
+    },
+    "Pinned only" : {
+
+    },
+    "Reset %@ to default" : {
+
+    },
+    "Runtime Log" : {
+
+    },
+    "Search lessons, tracks, or mentors" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Sheet" : {
+
+    },
+    "Sheets are a good fit for filters, editors, and focused secondary tasks." : {
+
+    },
+    "Status" : {
+
+    },
+    "Task Group" : {
+
+    },
+    "Theme" : {
+
+    },
+    "Track" : {
+
+    }
+  },
+  "version" : "1.0"
+}
