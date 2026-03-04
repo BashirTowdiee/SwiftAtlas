@@ -6,7 +6,7 @@ struct GSInfoRow: View {
 
     var body: some View {
         HStack {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .foregroundStyle(.secondary)
             Spacer()
             Text(value)

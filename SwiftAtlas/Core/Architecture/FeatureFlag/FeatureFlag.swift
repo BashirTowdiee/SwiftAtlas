@@ -10,19 +10,19 @@ enum FeatureFlag: String, CaseIterable, Identifiable, Codable, Sendable {
 
     var title: String {
         switch self {
-        case .labsEnabled: "Labs"
-        case .remoteSyncEnabled: "Remote Sync"
-        case .advancedDiagnosticsEnabled: "Advanced Diagnostics"
-        case .experimentalConcurrencyDemosEnabled: "Concurrency Demos"
+        case .labsEnabled: String(localized: "Labs")
+        case .remoteSyncEnabled: String(localized: "Remote Sync")
+        case .advancedDiagnosticsEnabled: String(localized: "Advanced Diagnostics")
+        case .experimentalConcurrencyDemosEnabled: String(localized: "Concurrency Demos")
         }
     }
 
     var explanation: String {
         switch self {
-        case .labsEnabled: "Shows the teaching labs tab and the deeper language demos."
-        case .remoteSyncEnabled: "Allows background refreshes against JSONPlaceholder."
-        case .advancedDiagnosticsEnabled: "Shows richer cache and bundle diagnostics in Settings."
-        case .experimentalConcurrencyDemosEnabled: "Enables cancellable and task-group concurrency demos."
+        case .labsEnabled: String(localized: "Shows the teaching labs tab and the deeper language demos.")
+        case .remoteSyncEnabled: String(localized: "Allows background refreshes against JSONPlaceholder.")
+        case .advancedDiagnosticsEnabled: String(localized: "Shows richer cache and bundle diagnostics in Settings.")
+        case .experimentalConcurrencyDemosEnabled: String(localized: "Enables cancellable and task-group concurrency demos.")
         }
     }
 

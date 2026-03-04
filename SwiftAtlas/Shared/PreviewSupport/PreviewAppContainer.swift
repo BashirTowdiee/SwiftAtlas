@@ -22,22 +22,33 @@ enum PreviewAppContainer {
         )
     }
 
-    static func makePreviewContainer() -> AppContainer {
-        let appState = AppState(themeOption: .dark, notices: [AppNotice(tone: .info, message: "Preview mode uses deterministic fixtures.")])
-        let featureFlagStore = UserDefaultsFeatureFlagStore(defaults: .standard)
-        FeatureFlag.allCases.forEach { featureFlagStore.setOverride(true, for: $0) }
-        let cacheStore = InMemoryCacheStore()
-        let previewRepository = PreviewLessonRepository()
+    static func makePreviewContainer(
+        appState: AppState = AppState(
+            themeOption: .dark,
+            notices: [AppNotice(tone: .info, message: "Preview mode uses deterministic fixtures.")]
+        ),
+        featureFlags: [FeatureFlag: Bool] = SampleFlags.allEnabled,
+        lessonRepository: LessonRepository = PreviewLessonRepository(),
+        exerciseRepository: ExerciseRepository = PreviewExerciseRepository(),
+        secretsStore: SecretsStore = InMemorySecretsStore(),
+        cacheStore: CacheStore = InMemoryCacheStore(),
+        pinnedLessonStore: PinnedLessonStore = PreviewPinnedLessonStore()
+    ) -> AppContainer {
+        let defaults = UserDefaults(suiteName: "SwiftAtlas.preview.\(UUID().uuidString)") ?? .standard
+        let featureFlagStore = UserDefaultsFeatureFlagStore(defaults: defaults)
+        FeatureFlag.allCases.forEach { flag in
+            featureFlagStore.setOverride(featureFlags[flag], for: flag)
+        }
         let diagnosticsService = DiagnosticsService(cacheLocation: "/tmp/SwiftAtlasPreview", featureFlagStore: featureFlagStore)
 
         return AppContainer(
             appState: appState,
-            lessonRepository: previewRepository,
-            exerciseRepository: PreviewExerciseRepository(),
+            lessonRepository: lessonRepository,
+            exerciseRepository: exerciseRepository,
             featureFlagStore: featureFlagStore,
-            secretsStore: InMemorySecretsStore(),
+            secretsStore: secretsStore,
             cacheStore: cacheStore,
-            pinnedLessonStore: UserDefaultsPinnedLessonStore(defaults: .standard),
+            pinnedLessonStore: pinnedLessonStore,
             diagnosticsService: diagnosticsService
         )
     }

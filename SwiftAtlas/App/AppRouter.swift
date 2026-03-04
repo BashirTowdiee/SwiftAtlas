@@ -10,10 +10,10 @@ enum AppTab: String, CaseIterable, Hashable, Identifiable, Codable, Sendable {
 
     var title: String {
         switch self {
-        case .home: "Home"
-        case .lessons: "Lessons"
-        case .labs: "Labs"
-        case .settings: "Settings"
+        case .home: String(localized: "Home")
+        case .lessons: String(localized: "Lessons")
+        case .labs: String(localized: "Labs")
+        case .settings: String(localized: "Settings")
         }
     }
 

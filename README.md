@@ -4,6 +4,13 @@ SwiftAtlas is an iPhone-first SwiftUI reference application built to teach Swift
 
 The project uses Apple frameworks only, follows MVVM with explicit boundaries, and favors readable, teachable code over shortcuts or abstraction for its own sake.
 
+## Quality Bar
+
+- Every repository and view model should have deterministic unit tests.
+- Every non-trivial screen should include multiple previews that demonstrate meaningful states.
+- User-visible strings should be represented in `Localizable.xcstrings`.
+- UI tests should cover at least one critical journey for each top-level area of the app.
+
 ## Goals
 
 - Teach Swift and iOS app architecture through a real application.

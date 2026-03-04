@@ -13,6 +13,7 @@ struct FeatureFlagsView: View {
                         set: { viewModel.setFlag(flag, to: $0) }
                     )
                     GSToggleRow(title: flag.title, detail: flag.explanation, isOn: isOn)
+                        .accessibilityIdentifier("settings.flag.\(flag.rawValue)")
                     Button("Reset \(flag.title) to default") {
                         viewModel.clearFlagOverride(flag)
                     }

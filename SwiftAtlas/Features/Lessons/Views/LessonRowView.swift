@@ -31,5 +31,6 @@ struct LessonRowView: View {
                 }
             }
         }
+        .accessibilityIdentifier("lessons.row.\(lesson.id)")
     }
 }

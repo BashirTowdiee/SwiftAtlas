@@ -5,7 +5,7 @@ struct GSBadge: View {
     let tone: AppNotice.Tone
 
     var body: some View {
-        Text(title)
+        Text(LocalizedStringKey(title))
             .font(GSTypography.caption)
             .padding(.horizontal, 10)
             .padding(.vertical, 6)

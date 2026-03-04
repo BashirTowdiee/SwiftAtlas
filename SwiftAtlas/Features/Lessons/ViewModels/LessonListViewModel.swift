@@ -12,7 +12,7 @@ final class LessonListViewModel: ObservableObject {
     @Published var selectedTrackID: Int?
     @Published var showPinnedOnly = false
     @Published var isFilterPresented = false
-    @Published var lastSyncMessage = "Waiting for first load."
+    @Published var lastSyncMessage = String(localized: "Waiting for first load.")
 
     private var lessonRepository: LessonRepository?
     private var pinnedLessonStore: PinnedLessonStore?
@@ -21,6 +21,27 @@ final class LessonListViewModel: ObservableObject {
     private var refreshTask: Task<Void, Never>?
     private var baseGroups: [LessonGroup] = []
     private var hasBound = false
+
+    init() {}
+
+    init(
+        previewLoadState: LoadableState<[LessonGroup]>,
+        searchQuery: String = "",
+        selectedTrackID: Int? = nil,
+        showPinnedOnly: Bool = false,
+        isFilterPresented: Bool = false,
+        lastSyncMessage: String = String(localized: "Waiting for first load."),
+        baseGroups: [LessonGroup] = []
+    ) {
+        loadState = previewLoadState
+        self.searchQuery = searchQuery
+        self.selectedTrackID = selectedTrackID
+        self.showPinnedOnly = showPinnedOnly
+        self.isFilterPresented = isFilterPresented
+        self.lastSyncMessage = lastSyncMessage
+        self.baseGroups = baseGroups
+        hasBound = true
+    }
 
     func bind(container: AppContainer) async {
         lessonRepository = container.lessonRepository
@@ -45,7 +66,7 @@ final class LessonListViewModel: ObservableObject {
             baseGroups = groups
             applyCurrentFilters(isStale: false)
             appState?.reachability = .refreshing
-            lastSyncMessage = "Loaded cached or remote data, now checking for fresher content."
+            lastSyncMessage = String(localized: "Loaded cached or remote data, now checking for fresher content.")
             await refreshInBackground()
         } catch {
             loadState = .failed(AppError(error: error))
@@ -61,13 +82,13 @@ final class LessonListViewModel: ObservableObject {
             baseGroups = groups
             applyCurrentFilters(isStale: false)
             appState?.reachability = .online
-            lastSyncMessage = "Remote content refreshed successfully."
+            lastSyncMessage = String(localized: "Remote content refreshed successfully.")
         } catch {
             if !baseGroups.isEmpty {
                 applyCurrentFilters(isStale: true)
-                appState?.pushNotice(AppNotice(tone: .warning, message: "Remote refresh failed. Showing cached lesson content."))
+                appState?.pushNotice(AppNotice(tone: .warning, message: String(localized: "Remote refresh failed. Showing cached lesson content.")))
                 appState?.reachability = .usingCachedData
-                lastSyncMessage = "Remote refresh failed, but cached data is still available."
+                lastSyncMessage = String(localized: "Remote refresh failed, but cached data is still available.")
             } else {
                 loadState = .failed(AppError(error: error))
             }
@@ -113,11 +134,20 @@ final class LessonListViewModel: ObservableObject {
             let results = try await repository.searchLessons(query: normalized)
             let grouped = Dictionary(grouping: results, by: \.track.title)
                 .map { title, lessons in
-                    LessonGroup(id: "search-\(title)", title: title, subtitle: "\(lessons.count) result(s)", lessons: lessons.sorted { $0.title < $1.title })
+                    LessonGroup(
+                        id: "search-\(title)",
+                        title: title,
+                        subtitle: String(format: String(localized: "%lld result(s)"), lessons.count),
+                        lessons: lessons.sorted { $0.title < $1.title }
+                    )
                 }
                 .sorted { $0.title < $1.title }
             loadState = .loaded(filtered(groups: grouped), isStale: false)
-            lastSyncMessage = "Showing \(results.count) search result(s) for “\(normalized)”."
+            lastSyncMessage = String(
+                format: String(localized: "Showing %lld search result(s) for \"%@\"."),
+                results.count,
+                normalized
+            )
         } catch {
             loadState = .failed(AppError(error: error))
         }

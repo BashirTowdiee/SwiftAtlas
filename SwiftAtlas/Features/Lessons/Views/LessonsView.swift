@@ -2,7 +2,11 @@ import SwiftUI
 
 struct LessonsView: View {
     @EnvironmentObject private var container: AppContainer
-    @StateObject private var viewModel = LessonListViewModel()
+    @StateObject private var viewModel: LessonListViewModel
+
+    init(viewModel: @autoclosure @escaping () -> LessonListViewModel = LessonListViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel())
+    }
 
     var body: some View {
         NavigationStack {
@@ -64,6 +68,7 @@ struct LessonsView: View {
                     } label: {
                         Image(systemName: "line.3.horizontal.decrease.circle")
                     }
+                    .accessibilityIdentifier("lessons.filterButton")
                 }
             }
             .searchable(text: $viewModel.searchQuery, prompt: "Search lessons, tracks, or mentors")
@@ -76,6 +81,7 @@ struct LessonsView: View {
             .task {
                 await viewModel.bind(container: container)
             }
+            .accessibilityIdentifier("lessons.screen")
         }
     }
 
@@ -84,8 +90,47 @@ struct LessonsView: View {
 
 struct LessonsView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewContainer {
-            LessonsView()
+        Group {
+            PreviewContainer(
+                container: PreviewScenarios.previewContainer(
+                    appState: .homeDefault,
+                    lessonRepository: PreviewLessonRepository()
+                )
+            ) {
+                LessonsView()
+            }
+            .previewDisplayName("Loaded")
+
+            PreviewContainer {
+                LessonsView(
+                    viewModel: LessonListViewModel(
+                        previewLoadState: .loaded([], isStale: false),
+                        lastSyncMessage: "Showing 0 search result(s)."
+                    )
+                )
+            }
+            .previewDisplayName("Empty")
+
+            PreviewContainer {
+                LessonsView(viewModel: LessonListViewModel(previewLoadState: .loading))
+            }
+            .previewDisplayName("Loading")
+
+            PreviewContainer {
+                LessonsView(viewModel: LessonListViewModel(previewLoadState: .failed(.network("Preview network error."))))
+            }
+            .previewDisplayName("Error")
+
+            PreviewContainer {
+                LessonsView(
+                    viewModel: LessonListViewModel(
+                        previewLoadState: .loaded(SampleLessons.groups, isStale: true),
+                        lastSyncMessage: "Cached content is currently visible.",
+                        baseGroups: SampleLessons.groups
+                    )
+                )
+            }
+            .previewDisplayName("Stale Cache")
         }
     }
 }

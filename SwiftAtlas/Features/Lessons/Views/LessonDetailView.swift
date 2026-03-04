@@ -58,6 +58,7 @@ struct LessonDetailView: View {
         }
         .navigationTitle("Lesson Detail")
         .navigationBarTitleDisplayMode(.inline)
+        .accessibilityIdentifier("lessonDetail.screen")
         .task {
             await viewModel.bind(container: container, lessonID: lessonID)
         }

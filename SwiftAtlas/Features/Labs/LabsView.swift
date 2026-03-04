@@ -2,13 +2,13 @@ import SwiftUI
 
 struct LabsView: View {
     private let labs: [LabTopic] = [
-        LabTopic(id: "components", title: "Components Lab", summary: "Shared buttons, cards, badges, and async state views.", symbol: "square.grid.2x2.fill"),
-        LabTopic(id: "theme", title: "Theme Lab", summary: "Semantic colors, typography, spacing, and dark mode.", symbol: "paintpalette.fill"),
-        LabTopic(id: "modal", title: "Modal Lab", summary: "Sheet, full screen, alert, and confirmation dialog patterns.", symbol: "rectangle.3.group.fill"),
-        LabTopic(id: "ownership", title: "Ownership Lab", summary: "ARC, retain cycles, weak, unowned, and closure capture examples.", symbol: "link.badge.plus"),
-        LabTopic(id: "inheritance", title: "Inheritance Lab", summary: "Final-by-default, override control, required initializers, and class vs static.", symbol: "arrow.triangle.branch"),
-        LabTopic(id: "access", title: "Access Control Lab", summary: "private, fileprivate, internal, public, open, and special identifiers.", symbol: "key.fill"),
-        LabTopic(id: "concurrency", title: "Concurrency Lab", summary: "Task cancellation, actor isolation, task groups, and main-actor UI.", symbol: "bolt.fill")
+        LabTopic(id: "components", title: String(localized: "Components Lab"), summary: String(localized: "Shared buttons, cards, badges, and async state views."), symbol: "square.grid.2x2.fill"),
+        LabTopic(id: "theme", title: String(localized: "Theme Lab"), summary: String(localized: "Semantic colors, typography, spacing, and dark mode."), symbol: "paintpalette.fill"),
+        LabTopic(id: "modal", title: String(localized: "Modal Lab"), summary: String(localized: "Sheet, full screen, alert, and confirmation dialog patterns."), symbol: "rectangle.3.group.fill"),
+        LabTopic(id: "ownership", title: String(localized: "Ownership Lab"), summary: String(localized: "ARC, retain cycles, weak, unowned, and closure capture examples."), symbol: "link.badge.plus"),
+        LabTopic(id: "inheritance", title: String(localized: "Inheritance Lab"), summary: String(localized: "Final-by-default, override control, required initializers, and class vs static."), symbol: "arrow.triangle.branch"),
+        LabTopic(id: "access", title: String(localized: "Access Control Lab"), summary: String(localized: "private, fileprivate, internal, public, open, and special identifiers."), symbol: "key.fill"),
+        LabTopic(id: "concurrency", title: String(localized: "Concurrency Lab"), summary: String(localized: "Task cancellation, actor isolation, task groups, and main-actor UI."), symbol: "bolt.fill")
     ]
 
     var body: some View {
@@ -27,9 +27,11 @@ struct LabsView: View {
                         }
                         .padding(.vertical, 6)
                     }
+                    .accessibilityIdentifier("labs.row.\(lab.id)")
                 }
             }
             .navigationTitle("Labs")
+            .accessibilityIdentifier("labs.screen")
         }
     }
 
@@ -56,8 +58,23 @@ struct LabsView: View {
 
 struct LabsView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewContainer {
-            LabsView()
+        Group {
+            PreviewContainer {
+                LabsView()
+            }
+            .previewDisplayName("Default")
+
+            PreviewContainer {
+                LabsView()
+                    .environment(\.dynamicTypeSize, .accessibility3)
+            }
+            .previewDisplayName("Accessibility")
+
+            PreviewContainer {
+                LabsView()
+            }
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Dark Mode")
         }
     }
 }

@@ -16,13 +16,58 @@
     "Access Control" : {
 
     },
+    "Advanced Diagnostics" : {
+
+    },
+    "Allows background refreshes against JSONPlaceholder." : {
+
+    },
     "Alerts are for short, blocking decisions." : {
 
     },
     "All tracks" : {
 
     },
+    "API-backed learning catalogue" : {
+
+    },
+    "App-owned domain models isolate JSONPlaceholder DTOs." : {
+
+    },
+    "App-wide state summary" : {
+
+    },
+    "Appearance" : {
+
+    },
     "Buttons" : {
+
+    },
+    "Build" : {
+
+    },
+    "Build and runtime metadata" : {
+
+    },
+    "Cache Path" : {
+
+    },
+    "Cache clear failed: %@" : {
+
+    },
+    "Cache inspector" : {
+
+    },
+    "Cached" : {
+
+    },
+    "Caching" : {
+
+    },
+    "Cleared cached lesson data." : {
+
+    },
+    "Components Lab" : {
 
     },
     "Cancellation" : {
@@ -31,10 +76,25 @@
     "Choose a presentation explanation" : {
 
     },
+    "Concurrency Demos" : {
+
+    },
+    "Concurrency Lab" : {
+
+    },
     "Components" : {
 
     },
     "Concurrency" : {
+
+    },
+    "Data fetching, caching, previews, tests, and feature flags" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Diagnostics" : {
 
     },
     "Diagnostics are loading." : {
@@ -43,25 +103,67 @@
     "Display" : {
 
     },
+    "Done" : {
+
+    },
     "Document the choice in code" : {
 
     },
     "Enter a demo token" : {
 
     },
+    "Enter a token before saving." : {
+
+    },
     "Every tab demonstrates a different layer of a serious SwiftUI app: app shell, design system, data flow, caching, memory ownership, and concurrency." : {
+
+    },
+    "Exercises" : {
+
+    },
+    "Exercises are deterministic fixtures mapped from the remote lesson id so the app stays predictable." : {
+
+    },
+    "Failed to delete token: %@" : {
+
+    },
+    "Failed to save token: %@" : {
+
+    },
+    "Feature overrides" : {
 
     },
     "Filters" : {
 
     },
+    "Flags" : {
+
+    },
     "Full-screen cover" : {
+
+    },
+    "Group" : {
 
     },
     "Guidance" : {
 
     },
+    "Handle" : {
+
+    },
+    "Home" : {
+
+    },
+    "Home surfaces the shared state that the whole app cares about." : {
+
+    },
     "Inheritance" : {
+
+    },
+    "Inheritance Lab" : {
+
+    },
+    "Keychain demo" : {
 
     },
     "Keep the flow lightweight" : {
@@ -70,7 +172,13 @@
     "Labs" : {
 
     },
+    "Learning Path" : {
+
+    },
     "Learn Swift by reading code that treats architecture as part of the lesson." : {
+
+    },
+    "Light" : {
 
     },
     "Lesson Detail" : {
@@ -79,22 +187,82 @@
     "Lessons" : {
 
     },
+    "Loaded cached or remote data, now checking for fresher content." : {
+
+    },
+    "MVVM with strict view, view model, repository boundaries." : {
+
+    },
+    "MVVM, folder structure, global vs local state" : {
+
+    },
+    "Mapped comments" : {
+
+    },
+    "Mentor" : {
+
+    },
     "Modals" : {
 
     },
     "No lessons match the current search and filter state." : {
 
     },
+    "No demo token saved." : {
+
+    },
     "OK" : {
+
+    },
+    "Open" : {
+
+    },
+    "Open Labs" : {
+
+    },
+    "Open Lessons" : {
 
     },
     "Ownership" : {
 
     },
+    "Ownership Lab" : {
+
+    },
     "Pinned only" : {
 
     },
+    "Practice the lesson" : {
+
+    },
+    "Preview fixtures and tests are first-class parts of the architecture." : {
+
+    },
+    "Reference rules you can copy" : {
+
+    },
+    "Remote Lessons" : {
+
+    },
+    "Remote Sync" : {
+
+    },
+    "Remote content refreshed successfully." : {
+
+    },
+    "Remote refresh failed, but cached data is still available." : {
+
+    },
+    "Remote refresh failed. Showing cached lesson content." : {
+
+    },
     "Reset %@ to default" : {
+
+    },
+    "Save" : {
+
+    },
+    "Secrets" : {
 
     },
     "Runtime Log" : {
@@ -103,7 +271,19 @@
     "Search lessons, tracks, or mentors" : {
 
     },
+    "Semantic colors, typography, spacing, and dark mode." : {
+
+    },
     "Settings" : {
+
+    },
+    "Sheet, full screen, alert, and confirmation dialog patterns." : {
+
+    },
+    "Shows richer cache and bundle diagnostics in Settings." : {
+
+    },
+    "Shows the teaching labs tab and the deeper language demos." : {
 
     },
     "Sheet" : {
@@ -112,16 +292,85 @@
     "Sheets are a good fit for filters, editors, and focused secondary tasks." : {
 
     },
+    "Showing %lld search result(s) for \"%@\"." : {
+
+    },
+    "Stored token: %@" : {
+
+    },
     "Status" : {
+
+    },
+    "Structured concurrency and explicit cache policies are taught through real flows." : {
+
+    },
+    "Swift Atlas" : {
+
+    },
+    "System" : {
 
     },
     "Task Group" : {
 
     },
+    "Task cancellation, actor isolation, task groups, and main-actor UI." : {
+
+    },
+    "The cache is intentionally simple: JSON files for persistence and explicit policy choices in repositories." : {
+
+    },
+    "The project is organized so the folder tree mirrors the ideas you are trying to learn." : {
+
+    },
+    "These are deliberately opinionated so the code reads like a standard, not a sketch." : {
+
+    },
+    "These are JSONPlaceholder comments mapped into lesson discussion." : {
+
+    },
+    "This exercise is deterministically mapped from the lesson id so the teaching app stays reproducible." : {
+
+    },
+    "This screen loads JSONPlaceholder data, maps it into lesson models, caches it locally, then lets the view model apply filters and search." : {
+
+    },
+    "Theme override" : {
+
+    },
     "Theme" : {
 
     },
+    "Theme Lab" : {
+
+    },
+    "Theme tokens, components, lists, groups, modals" : {
+
+    },
     "Track" : {
+
+    },
+    "Unable to read token: %@" : {
+
+    },
+    "Use the app state to resolve system, light, and dark modes globally." : {
+
+    },
+    "Use this screen to learn why secrets do not belong in UserDefaults or source control." : {
+
+    },
+    "Version" : {
+
+    },
+    "Waiting for first load." : {
+
+    },
+    "What this app teaches" : {
+
+    },
+    "Why this lesson matters" : {
+
+    },
+    "%lld result(s)" : {
 
     }
   },

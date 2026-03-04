@@ -8,9 +8,9 @@ struct GSToggleRow: View {
     var body: some View {
         Toggle(isOn: $isOn) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(GSTypography.section)
-                Text(detail)
+                Text(LocalizedStringKey(detail))
                     .font(GSTypography.caption)
                     .foregroundStyle(.secondary)
             }

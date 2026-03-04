@@ -13,6 +13,7 @@ struct CacheInspectorView: View {
                 GSSecondaryButton(title: "Clear Cache") {
                     viewModel.clearCache()
                 }
+                .accessibilityIdentifier("settings.clearCache")
             }
         }
     }

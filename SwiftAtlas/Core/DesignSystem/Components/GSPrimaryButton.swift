@@ -9,9 +9,13 @@ struct GSPrimaryButton: View {
         Button(action: action) {
             Group {
                 if let systemImage {
-                    Label(title, systemImage: systemImage)
+                    Label {
+                        Text(LocalizedStringKey(title))
+                    } icon: {
+                        Image(systemName: systemImage)
+                    }
                 } else {
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                 }
             }
             .font(GSTypography.section)

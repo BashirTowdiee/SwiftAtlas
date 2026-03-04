@@ -1,11 +1,34 @@
 import Foundation
 
 struct PreviewLessonRepository: LessonRepository {
+    enum Variant {
+        case standard
+        case empty
+        case failure(AppError)
+    }
+
+    private let variant: Variant
+
+    init(variant: Variant = .standard) {
+        self.variant = variant
+    }
+
     func fetchLessonGroups(policy: CachePolicy) async throws -> [LessonGroup] {
-        SampleLessons.groups
+        switch variant {
+        case .standard:
+            return SampleLessons.groups
+        case .empty:
+            return []
+        case let .failure(error):
+            throw error
+        }
     }
 
     func fetchLessonDetail(id: Lesson.ID, policy: CachePolicy) async throws -> LessonDetail {
+        if case let .failure(error) = variant {
+            throw error
+        }
+
         let lesson = SampleLessons.lessons.first(where: { $0.id == id }) ?? SampleLessons.lessons[0]
         return LessonDetail(
             lesson: lesson,
@@ -22,13 +45,64 @@ struct PreviewLessonRepository: LessonRepository {
     }
 
     func searchLessons(query: String) async throws -> [Lesson] {
+        if case let .failure(error) = variant {
+            throw error
+        }
+
         guard !query.isEmpty else { return SampleLessons.lessons }
-        return SampleLessons.lessons.filter { $0.title.localizedCaseInsensitiveContains(query) }
+        let filtered = SampleLessons.lessons.filter { $0.title.localizedCaseInsensitiveContains(query) }
+        if case .empty = variant {
+            return []
+        }
+        return filtered
     }
 }
 
 struct PreviewExerciseRepository: ExerciseRepository {
+    enum Variant {
+        case standard
+        case empty
+        case failure(AppError)
+    }
+
+    private let variant: Variant
+
+    init(variant: Variant = .standard) {
+        self.variant = variant
+    }
+
     func fetchExercises(for lessonID: Lesson.ID, policy: CachePolicy) async throws -> [Exercise] {
-        SampleExercises.items
+        switch variant {
+        case .standard:
+            return SampleExercises.items
+        case .empty:
+            return []
+        case let .failure(error):
+            throw error
+        }
+    }
+}
+
+final class PreviewPinnedLessonStore: PinnedLessonStore {
+    private var pinnedIDs: Set<Lesson.ID>
+
+    init(pinnedIDs: Set<Lesson.ID> = [1]) {
+        self.pinnedIDs = pinnedIDs
+    }
+
+    func contains(_ lessonID: Lesson.ID) -> Bool {
+        pinnedIDs.contains(lessonID)
+    }
+
+    func toggle(_ lessonID: Lesson.ID) {
+        if pinnedIDs.contains(lessonID) {
+            pinnedIDs.remove(lessonID)
+        } else {
+            pinnedIDs.insert(lessonID)
+        }
+    }
+
+    func allPinnedIDs() -> Set<Lesson.ID> {
+        pinnedIDs
     }
 }

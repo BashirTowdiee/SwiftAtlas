@@ -5,7 +5,7 @@ struct GSSecondaryButton: View {
     let action: () -> Void
 
     var body: some View {
-        Button(title, action: action)
+        Button(LocalizedStringKey(title), action: action)
             .buttonStyle(.plain)
             .font(GSTypography.section)
             .padding(.horizontal, GSSpacing.medium)

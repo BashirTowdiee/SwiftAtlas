@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		019DB617C9CDA9A42EB197E0 /* SecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342A1C75DFC3779917FDE95 /* SecretsStore.swift */; };
+		01A1A1A1A1A1A1A1A1A1A1A1 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1B1B1B1B1B1B1B1B1B1B1 /* HomeViewModelTests.swift */; };
+		01A2A2A2A2A2A2A2A2A2A2A2 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2B2B2B2B2B2B2B2B2B2B2 /* SettingsViewModelTests.swift */; };
+		01A3A3A3A3A3A3A3A3A3A3A3 /* LessonDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3B3B3B3B3B3B3B3B3B3B3 /* LessonDetailViewModelTests.swift */; };
+		01A4A4A4A4A4A4A4A4A4A4A4 /* ExerciseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4B4B4B4B4B4B4B4B4B4B4 /* ExerciseRepositoryTests.swift */; };
 		02C0EF9AEEC0635610E275E5 /* KeychainSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D1FEA864F5C059F01DFCBA /* KeychainSecretsStore.swift */; };
 		0484C1B15FFE1F0D180FB19B /* ComponentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45953B3DDEC082A601D908 /* ComponentExample.swift */; };
 		05B32ADC5F26E2D20ED1D105 /* ExerciseListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50B9C95229DDF7ACDF3CF0 /* ExerciseListSection.swift */; };
@@ -143,9 +147,13 @@
 
 /* Begin PBXFileReference section */
 		0053682648D7AE5F4CA309C0 /* LabsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LabsView.swift; sourceTree = "<group>"; };
+		01B1B1B1B1B1B1B1B1B1B1B1 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		01B2B2B2B2B2B2B2B2B2B2B2 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		01B3B3B3B3B3B3B3B3B3B3B3 /* LessonDetailViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LessonDetailViewModelTests.swift; sourceTree = "<group>"; };
+		01B4B4B4B4B4B4B4B4B4B4B4 /* ExerciseRepositoryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExerciseRepositoryTests.swift; sourceTree = "<group>"; };
 		033BA4B8AC12549130B8DF06 /* SwiftAtlasLaunchTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftAtlasLaunchTests.swift; sourceTree = "<group>"; };
 		07863C3CCEE7EFDD7EA4C21F /* LessonRepositoryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LessonRepositoryTests.swift; sourceTree = "<group>"; };
-		079D3B100CCDFD73A58B7A4B /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		079D3B100CCDFD73A58B7A4B /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		0871FCC8A2409F7358A72860 /* GSAsyncStateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GSAsyncStateView.swift; sourceTree = "<group>"; };
 		0E96AF6BFAD5206148BBCF11 /* ThemeResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeResolver.swift; sourceTree = "<group>"; };
 		0EAADF5A92EBA9D9ABC32600 /* InMemorySecretsStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InMemorySecretsStore.swift; sourceTree = "<group>"; };
@@ -295,7 +303,6 @@
 				2FD74555D769EF18E829AA32 /* DiagnosticsService.swift */,
 				8EF5147E7A9DC803F44F7A78 /* DiagnosticsSnapshot.swift */,
 			);
-			name = Diagnostics;
 			path = Diagnostics;
 			sourceTree = "<group>";
 		};
@@ -304,7 +311,6 @@
 			children = (
 				54C4ABB4E7002FCD4AF7CE25 /* HomeViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -312,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -321,7 +326,6 @@
 			children = (
 				B4B491E6CA074ECCEB2FC41F /* URLSessionHTTPClient.swift */,
 			);
-			name = Client;
 			path = Client;
 			sourceTree = "<group>";
 		};
@@ -333,7 +337,6 @@
 				68F979664A205A38B57FDB2F /* PreviewRepositories.swift */,
 				A2169D1F92AACE0F1190D6B7 /* PreviewScenarios.swift */,
 			);
-			name = PreviewSupport;
 			path = PreviewSupport;
 			sourceTree = "<group>";
 		};
@@ -341,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Modifiers;
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
@@ -350,7 +352,6 @@
 			children = (
 				72C67FEF2EEE069A5C6BC820 /* HomeView.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -359,7 +360,6 @@
 			children = (
 				AD90D7E90A43C9535CE6DB35 /* JSONPlaceholderDTOs.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -367,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -379,7 +378,6 @@
 				B17EDF5B28A4D2F23256456C /* Lessons */,
 				48E379DA192F0FFDF1F1393C /* Settings */,
 			);
-			name = Features;
 			path = Features;
 			sourceTree = "<group>";
 		};
@@ -390,7 +388,6 @@
 				555D84EF36BD2C57F3B9B7E1 /* Secrets */,
 				C37EA270753D8F080AF6F9CF /* Storage */,
 			);
-			name = Persistence;
 			path = Persistence;
 			sourceTree = "<group>";
 		};
@@ -399,7 +396,6 @@
 			children = (
 				8FF6286FE70A4D4496F981C4 /* TestSupport.swift */,
 			);
-			name = Support;
 			path = Support;
 			sourceTree = "<group>";
 		};
@@ -410,7 +406,6 @@
 				0D1BAE6022B91D64BFB62BA1 /* ViewModels */,
 				21DD131EE8C6746B0C8F8F04 /* Views */,
 			);
-			name = Home;
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -432,7 +427,6 @@
 				E3487C885FA351A1BFEAD929 /* HTTPClient.swift */,
 				63D08A666DCE0FBB8DB7795C /* HTTPMethod.swift */,
 			);
-			name = HTTP;
 			path = HTTP;
 			sourceTree = "<group>";
 		};
@@ -442,17 +436,19 @@
 				7B1D86B4394766A218140E04 /* FormatterExamples.swift */,
 				9BB81FC21727F8EB3048CC17 /* InheritanceLabView.swift */,
 			);
-			name = InheritanceLab;
 			path = InheritanceLab;
 			sourceTree = "<group>";
 		};
 		44E06B28DEF03A0A40DBCE09 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				01B4B4B4B4B4B4B4B4B4B4B4 /* ExerciseRepositoryTests.swift */,
+				01B1B1B1B1B1B1B1B1B1B1B1 /* HomeViewModelTests.swift */,
+				01B3B3B3B3B3B3B3B3B3B3B3 /* LessonDetailViewModelTests.swift */,
 				9688FE04260081B63FE2DDBB /* LessonListViewModelTests.swift */,
 				07863C3CCEE7EFDD7EA4C21F /* LessonRepositoryTests.swift */,
+				01B2B2B2B2B2B2B2B2B2B2B2 /* SettingsViewModelTests.swift */,
 			);
-			name = Features;
 			path = Features;
 			sourceTree = "<group>";
 		};
@@ -465,7 +461,6 @@
 				EB9A591F5A09FCC41C62F9C7 /* LessonRowView.swift */,
 				BEBBE99C7CF3A2A943F6C45F /* LessonsView.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -476,7 +471,6 @@
 				C94FE157524B569768F289FD /* ViewModels */,
 				A2A2F1294AFC42DC137F6FB2 /* Views */,
 			);
-			name = Settings;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -488,7 +482,6 @@
 				A829CFFD481C187DFD5DCEAE /* SecretKey.swift */,
 				7342A1C75DFC3779917FDE95 /* SecretsStore.swift */,
 			);
-			name = Secrets;
 			path = Secrets;
 			sourceTree = "<group>";
 		};
@@ -499,7 +492,6 @@
 				50F99769E001881D76DEF447 /* OwnershipLabViewModel.swift */,
 				F09206BE6124C730D1B0DCE3 /* OwnershipModels.swift */,
 			);
-			name = OwnershipLab;
 			path = OwnershipLab;
 			sourceTree = "<group>";
 		};
@@ -510,7 +502,6 @@
 				D4F64763CC4489E6C7DE318A /* ThemePalette.swift */,
 				0E96AF6BFAD5206148BBCF11 /* ThemeResolver.swift */,
 			);
-			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -520,7 +511,6 @@
 				EEC1CE8A0E0AE8D377D07280 /* Flows */,
 				6CD3FCD6415334B9C8C01BFE /* Support */,
 			);
-			name = SwiftAtlasUITests;
 			path = SwiftAtlasUITests;
 			sourceTree = "<group>";
 		};
@@ -531,7 +521,6 @@
 				DF6078C4AD71D780231FE0A3 /* ModalLabView.swift */,
 				4438814F70122F04751E6523 /* ThemeLabView.swift */,
 			);
-			name = ComponentsLab;
 			path = ComponentsLab;
 			sourceTree = "<group>";
 		};
@@ -539,7 +528,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Support;
 			path = Support;
 			sourceTree = "<group>";
 		};
@@ -551,7 +539,6 @@
 				D807DC82C43CB14C0394BA92 /* InMemorySecretsStoreTests.swift */,
 				C482211B3E1F6F66847E4DE9 /* OwnershipLabTests.swift */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -563,7 +550,6 @@
 				F98B2FDC30DC0C5B412CFEB1 /* SampleData */,
 				F675D288161FA392022EF867 /* Services */,
 			);
-			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
@@ -571,7 +557,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Environment;
 			path = Environment;
 			sourceTree = "<group>";
 		};
@@ -579,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -599,7 +583,6 @@
 				E03304D0D0673ADF0870DAF6 /* ExerciseRepository.swift */,
 				AEAB149A5A261F7475896266 /* LessonRepository.swift */,
 			);
-			name = Repositories;
 			path = Repositories;
 			sourceTree = "<group>";
 		};
@@ -627,7 +610,6 @@
 				1103E46A74C4CF21CC380679 /* Assets.xcassets */,
 				079D3B100CCDFD73A58B7A4B /* Localizable.xcstrings */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -635,7 +617,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Support;
 			path = Support;
 			sourceTree = "<group>";
 		};
@@ -646,7 +627,6 @@
 				BD360EEA3EF4B99DE7308C4F /* GSSpacing.swift */,
 				78F5CF33301FBE1588F5F9CA /* GSTypography.swift */,
 			);
-			name = Tokens;
 			path = Tokens;
 			sourceTree = "<group>";
 		};
@@ -658,7 +638,6 @@
 				CA5CAC04A7B7121810282032 /* LoadableState */,
 				A06C1CC1048A3AD6FC1AAD6D /* ViewModel */,
 			);
-			name = Architecture;
 			path = Architecture;
 			sourceTree = "<group>";
 		};
@@ -669,7 +648,6 @@
 				44E06B28DEF03A0A40DBCE09 /* Features */,
 				2A8EEB143E6F75D1790E1056 /* Support */,
 			);
-			name = SwiftAtlasTests;
 			path = SwiftAtlasTests;
 			sourceTree = "<group>";
 		};
@@ -679,7 +657,6 @@
 				BA79CC5AB4B8B26AC284A0A6 /* LessonDetailViewModel.swift */,
 				B724F51F1258F3C552C3A384 /* LessonListViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -687,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -701,7 +677,6 @@
 				8E734C7DF000FB1DAF733059 /* SecretsDemoView.swift */,
 				5BC3F7335E780647D19EB46F /* SettingsView.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -710,7 +685,6 @@
 			children = (
 				727D3FEE93428DFA95775C4C /* LessonDetailScreenModel.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -723,7 +697,6 @@
 				9E53147B986B144B06AF60E7 /* ViewModels */,
 				480E5D9823E53DC10B8A2C9A /* Views */,
 			);
-			name = Lessons;
 			path = Lessons;
 			sourceTree = "<group>";
 		};
@@ -732,7 +705,6 @@
 			children = (
 				265F92B2949F76D3B4A1EC21 /* JSONPlaceholderAPI.swift */,
 			);
-			name = Endpoints;
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
@@ -741,7 +713,6 @@
 			children = (
 				2F47EB3C0AF7D1A2E30E4F61 /* AppError.swift */,
 			);
-			name = Utilities;
 			path = Utilities;
 			sourceTree = "<group>";
 		};
@@ -752,7 +723,6 @@
 				6FA7B297DA47106167215419 /* FeatureFlagStore.swift */,
 				23F973F729DB24E625ABFB49 /* UserDefaultsFeatureFlagStore.swift */,
 			);
-			name = FeatureFlag;
 			path = FeatureFlag;
 			sourceTree = "<group>";
 		};
@@ -765,7 +735,6 @@
 				A49A2507C350AF951865A498 /* InMemoryCacheStore.swift */,
 				77FF7CF25219402A306EE953 /* JSONFileCacheStore.swift */,
 			);
-			name = Cache;
 			path = Cache;
 			sourceTree = "<group>";
 		};
@@ -778,7 +747,6 @@
 				D0866B864AE26299FC2BB022 /* Networking */,
 				296313957B0249FA27E07622 /* Persistence */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -786,7 +754,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Storage;
 			path = Storage;
 			sourceTree = "<group>";
 		};
@@ -805,7 +772,6 @@
 				20249893578EED75978A7F9A /* Track.swift */,
 				E1B1FACB60E27376035C7337 /* TrackOwner.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -816,7 +782,6 @@
 				9F3DB7C702E940F1DD1AA63C /* ConcurrencyLabView.swift */,
 				1333E50333FB3FE2AC774FA6 /* ConcurrencyLabViewModel.swift */,
 			);
-			name = ConcurrencyLab;
 			path = ConcurrencyLab;
 			sourceTree = "<group>";
 		};
@@ -825,7 +790,6 @@
 			children = (
 				9F5D21AC4D1333B4A42FB236 /* SettingsViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -834,7 +798,6 @@
 			children = (
 				842AA599EAD4C39F623341E6 /* LoadableState.swift */,
 			);
-			name = LoadableState;
 			path = LoadableState;
 			sourceTree = "<group>";
 		};
@@ -846,7 +809,6 @@
 				375247F5B18BACE9C70C445A /* HTTP */,
 				247E3E1AFDC8DF76E2E474D4 /* Models */,
 			);
-			name = Networking;
 			path = Networking;
 			sourceTree = "<group>";
 		};
@@ -859,7 +821,6 @@
 				8C9F1EFCAF82A83EA87017AE /* Resources */,
 				71A50937921E20EA72D89E3E /* Shared */,
 			);
-			name = SwiftAtlas;
 			path = SwiftAtlas;
 			sourceTree = "<group>";
 		};
@@ -870,7 +831,6 @@
 				0FF45B84FB744B24706DA180 /* Extensions */,
 				B5C68BF8DAA65CAADE2880B4 /* Utilities */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -888,7 +848,6 @@
 				6E7DDBA4D482B7ECEE9413E6 /* GSSkeletonBlock.swift */,
 				801F7BB11AF97E276E673CBE /* GSToggleRow.swift */,
 			);
-			name = Components;
 			path = Components;
 			sourceTree = "<group>";
 		};
@@ -898,7 +857,6 @@
 				033BA4B8AC12549130B8DF06 /* SwiftAtlasLaunchTests.swift */,
 				13BA701ED6DAA403663CA3C9 /* SwiftAtlasUITests.swift */,
 			);
-			name = Flows;
 			path = Flows;
 			sourceTree = "<group>";
 		};
@@ -910,7 +868,6 @@
 				648C8604D95478BA1F0423FC /* Theme */,
 				9070B06C87F0B07DEF534BF9 /* Tokens */,
 			);
-			name = DesignSystem;
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
@@ -921,7 +878,6 @@
 				6C791B0C7A8F9ECDB60793D4 /* PinnedLessonStore.swift */,
 				F4335B102680C4B9E57E2931 /* UserDefaultsPinnedLessonStore.swift */,
 			);
-			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -933,7 +889,6 @@
 				F2AB236ACFED9634FA044EA7 /* SampleLessons.swift */,
 				A99602A913859032D9509F03 /* SampleThemeState.swift */,
 			);
-			name = SampleData;
 			path = SampleData;
 			sourceTree = "<group>";
 		};
@@ -946,7 +901,6 @@
 				CDA281DB4DAB9DD42EBC5EC9 /* AppState.swift */,
 				781FF73BB029EC08A6EFDDF0 /* SwiftAtlasApp.swift */,
 			);
-			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
@@ -956,7 +910,6 @@
 				5BA0AEE4B2F9130A1A366997 /* AccessControlExamples.swift */,
 				9402E0D12897086DB427EA1C /* AccessControlLabView.swift */,
 			);
-			name = AccessControlLab;
 			path = AccessControlLab;
 			sourceTree = "<group>";
 		};
@@ -970,7 +923,6 @@
 				0053682648D7AE5F4CA309C0 /* LabsView.swift */,
 				5A0AD271651E139CC132DD4D /* OwnershipLab */,
 			);
-			name = Labs;
 			path = Labs;
 			sourceTree = "<group>";
 		};
@@ -1036,20 +988,22 @@
 		EED2AB2D56A92CB3E7F8CF59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					3E87CC1C27FB6111A7C09741 = {
 						CreatedOnToolsVersion = 26.2;
+						ProvisioningStyle = Automatic;
 						TestTargetID = CAA56B2E090D090A0ACC3733;
 					};
 					703AD9AAB6732DEB17D717AB = {
 						CreatedOnToolsVersion = 26.2;
+						ProvisioningStyle = Automatic;
 						TestTargetID = CAA56B2E090D090A0ACC3733;
 					};
 					CAA56B2E090D090A0ACC3733 = {
 						CreatedOnToolsVersion = 26.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1062,8 +1016,6 @@
 				Base,
 			);
 			mainGroup = 3554651ACEEABC0A583A4023;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A357D959FA2DAEECB44B76D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1223,6 +1175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A4A4A4A4A4A4A4A4A4A4A4 /* ExerciseRepositoryTests.swift in Sources */,
+				01A1A1A1A1A1A1A1A1A1A1A1 /* HomeViewModelTests.swift in Sources */,
+				01A3A3A3A3A3A3A3A3A3A3A3 /* LessonDetailViewModelTests.swift in Sources */,
+				01A2A2A2A2A2A2A2A2A2A2A2 /* SettingsViewModelTests.swift in Sources */,
 				DEF85C19C234B288B52CBD6A /* ConcurrencyLabTests.swift in Sources */,
 				06328E91393770015DC04A39 /* FeatureFlagStoreTests.swift in Sources */,
 				710C5E0214407D9A84B19A51 /* InMemorySecretsStoreTests.swift in Sources */,
@@ -1436,9 +1392,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 			};

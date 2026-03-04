@@ -7,7 +7,11 @@ struct GSErrorView: View {
     var body: some View {
         GSCard {
             VStack(alignment: .leading, spacing: GSSpacing.medium) {
-                Label(error.title, systemImage: "exclamationmark.triangle.fill")
+                Label {
+                    Text(LocalizedStringKey(error.title))
+                } icon: {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                }
                     .font(GSTypography.title)
                     .foregroundStyle(.red)
                 Text(error.message)

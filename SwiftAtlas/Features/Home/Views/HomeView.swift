@@ -21,6 +21,7 @@ struct HomeView: View {
             .task {
                 viewModel.bind(container: container)
             }
+            .accessibilityIdentifier("home.screen")
         }
     }
 
@@ -38,9 +39,11 @@ struct HomeView: View {
                     GSPrimaryButton(title: "Open Lessons", systemImage: "books.vertical.fill") {
                         appState.selectedTab = .lessons
                     }
+                    .accessibilityIdentifier("home.openLessons")
                     GSSecondaryButton(title: "Open Labs") {
                         appState.selectedTab = .labs
                     }
+                    .accessibilityIdentifier("home.openLabs")
                 }
             }
         }
@@ -105,8 +108,38 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewContainer {
-            HomeView()
+        Group {
+            PreviewContainer(container: PreviewScenarios.previewContainer()) {
+                HomeView()
+            }
+            .previewDisplayName("Default")
+
+            PreviewContainer(
+                container: PreviewScenarios.previewContainer(
+                    appState: .diagnosticsHeavy,
+                    flags: .diagnosticsHeavy
+                )
+            ) {
+                HomeView()
+            }
+            .previewDisplayName("Diagnostics Heavy")
+
+            PreviewContainer(container: PreviewScenarios.previewContainer()) {
+                HomeView()
+                    .environment(\.dynamicTypeSize, .accessibility2)
+            }
+            .previewDisplayName("Accessibility")
+
+            PreviewContainer(
+                container: PreviewScenarios.previewContainer(
+                    appState: .diagnosticsHeavy,
+                    flags: .allEnabled
+                )
+            ) {
+                HomeView()
+            }
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Dark Mode")
         }
     }
 }

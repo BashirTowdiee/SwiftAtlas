@@ -17,6 +17,7 @@ struct AppearanceSettingsView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                .accessibilityIdentifier("settings.themePicker")
             }
         }
     }

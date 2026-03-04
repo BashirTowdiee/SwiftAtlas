@@ -20,6 +20,7 @@ struct LessonFilterSheet: View {
                 }
             }
             .navigationTitle("Filters")
+            .accessibilityIdentifier("lessons.filterSheet")
         }
     }
 }

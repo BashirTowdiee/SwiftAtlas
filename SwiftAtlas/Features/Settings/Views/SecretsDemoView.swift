@@ -9,6 +9,7 @@ struct SecretsDemoView: View {
                 GSSectionHeader(eyebrow: "Secrets", title: "Keychain demo", detail: "Use this screen to learn why secrets do not belong in UserDefaults or source control.")
                 TextField("Enter a demo token", text: $viewModel.secretDraft)
                     .textFieldStyle(.roundedBorder)
+                    .accessibilityIdentifier("settings.secretField")
                 Text(viewModel.secretStatus)
                     .font(GSTypography.caption)
                     .foregroundStyle(.secondary)
@@ -16,9 +17,11 @@ struct SecretsDemoView: View {
                     GSPrimaryButton(title: "Save", systemImage: "key.fill") {
                         viewModel.saveSecret()
                     }
+                    .accessibilityIdentifier("settings.saveSecret")
                     GSSecondaryButton(title: "Delete") {
                         viewModel.deleteSecret()
                     }
+                    .accessibilityIdentifier("settings.deleteSecret")
                 }
             }
         }

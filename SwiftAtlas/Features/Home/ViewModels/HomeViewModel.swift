@@ -27,10 +27,10 @@ final class HomeViewModel: ObservableObject {
 
     var architectureHighlights: [String] {
         [
-            "MVVM with strict view, view model, repository boundaries.",
-            "App-owned domain models isolate JSONPlaceholder DTOs.",
-            "Structured concurrency and explicit cache policies are taught through real flows.",
-            "Preview fixtures and tests are first-class parts of the architecture."
+            String(localized: "MVVM with strict view, view model, repository boundaries."),
+            String(localized: "App-owned domain models isolate JSONPlaceholder DTOs."),
+            String(localized: "Structured concurrency and explicit cache policies are taught through real flows."),
+            String(localized: "Preview fixtures and tests are first-class parts of the architecture.")
         ]
     }
 }
